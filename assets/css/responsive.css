@@ -22,7 +22,8 @@
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
-  .about-img { display: none; }
+  .about-img { margin-bottom: 1.5rem; }
+  .about-img .dj-slideshow { max-width: 300px; margin: 0 auto; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .form-row { grid-template-columns: 1fr; }
 }
