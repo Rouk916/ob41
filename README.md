@@ -39,36 +39,17 @@ en temps réel depuis un espace privé.
 ---
 
 <details>
-<summary><strong>⚙️ Installation & déploiement (développeurs)</strong></summary>
+<summary><strong>📁 Structure du projet</strong></summary>
 
 <br>
 
-### 1. Configurer Supabase
-
-1. Crée un projet sur [supabase.com](https://supabase.com).
-2. **SQL Editor → New query** → colle le contenu de [`supabase-schema.sql`](supabase-schema.sql) → **Run**.
-3. **Project Settings → API** → copie l'`URL` du projet et la clé `anon` / `publishable`.
-4. Reporte ces deux valeurs dans [`assets/js/supabase-config.js`](assets/js/supabase-config.js).
-
-> La clé publishable est conçue pour être publique — la sécurité repose sur les règles RLS du schéma.
-
-### 2. Créer le compte du DJ
-
-**Authentication → Users → Add user** (coche *Auto Confirm User*). Ces identifiants ouvrent `pages/admin.html`.
-
-### 3. Déployer
-
-Pousse le dépôt sur GitHub, puis **Settings → Pages → Branch : `main` / `(root)`**.
-
-### Structure
-
 ```
-index.html              Accueil (hero, services, contact)
-404.html                Page d'erreur
-pages/booking.html      Calendrier public de réservation
-pages/admin.html        Espace privé du DJ
-assets/css · js · images
-supabase-schema.sql     Schéma de base de données
+index.html                 Accueil (hero, services, contact)
+404.html                   Page d'erreur
+pages/booking.html         Calendrier public de réservation
+pages/admin.html           Espace privé du DJ
+assets/css · js · images   Styles, scripts et médias
+supabase-schema.sql        Schéma de base de données
 ```
 
 </details>
