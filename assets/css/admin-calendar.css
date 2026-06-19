@@ -1,0 +1,79 @@
+.calendar-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.8rem;
+  position: sticky;
+  top: 5rem;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-nav h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+}
+
+.calendar-nav button {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.calendar-nav button:hover { background: var(--accent); border-color: var(--accent); }
+
+.calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0.5rem;
+}
+.calendar-days-header span {
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.4rem 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+  border: 1px solid transparent;
+  position: relative;
+  font-weight: 400;
+}
+
+.cal-day.empty { cursor: default; }
+.cal-day.past { color: #2a2a2a; cursor: not-allowed; }
+.cal-day.today { border-color: var(--muted); }
+
+.cal-day:not(.empty):not(.past):hover { transform: scale(1.08); background: var(--bg3); }
+
+.cal-day.selected { border-color: var(--text) !important; transform: scale(1.1); }
+
+.cal-day.day-available   { background: rgba(34,197,94,0.15);  border-color: rgba(34,197,94,0.3); color: var(--green); }
+.cal-day.day-unavailable { background: rgba(239,68,68,0.12);  border-color: rgba(239,68,68,0.25); color: var(--red); }
+.cal-day.day-partial     { background: rgba(249,115,22,0.15); border-color: rgba(249,115,22,0.3); color: var(--orange); }

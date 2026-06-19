@@ -1,0 +1,74 @@
+.slot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s;
+}
+.slot-row.open   { border-color: rgba(34,197,94,0.3); }
+.slot-row.closed { border-color: rgba(239,68,68,0.2); opacity: 0.6; }
+
+.slot-time { font-size: 0.9rem; font-weight: 600; }
+.slot-row.open   .slot-time { color: var(--text); }
+.slot-row.closed .slot-time { color: var(--muted); }
+
+.slot-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slot-toggle input[type="checkbox"] { display: none; }
+
+.toggle-track {
+  width: 42px; height: 22px;
+  background: var(--border);
+  border-radius: 20px;
+  position: relative;
+  transition: background 0.25s;
+}
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 16px; height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s;
+}
+.slot-toggle input:checked + .toggle-track { background: var(--green); }
+.slot-toggle input:checked + .toggle-track::after { transform: translateX(20px); }
+
+.toggle-label { font-size: 0.72rem; color: var(--muted); width: 60px; }
+.slot-toggle input:checked ~ .toggle-label { color: var(--green); }
+
+.btn-save {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-save:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(247,181,0,0.3); }
+.btn-save.saved { background: var(--green); }
+
+@media (max-width: 800px) {
+  .admin-layout { grid-template-columns: 1fr; }
+  .calendar-wrap { position: static; }
+  .admin-header { flex-direction: column; }
+  .admin-nav { padding: 1rem 1.2rem; }
+}

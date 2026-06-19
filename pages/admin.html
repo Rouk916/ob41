@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OBI41 — Gestion des disponibilités</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#f7b500" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/admin.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div id="login-screen">
+    <div class="login-box">
+      <div class="login-logo">OBI<span>41</span></div>
+      <p class="login-sub">Espace DJ — Accès privé</p>
+      <div class="form-group">
+        <label>Courriel</label>
+        <div class="input-wrap">
+          <input type="email" id="email-input" placeholder="dj@exemple.com" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <div class="input-wrap">
+          <input type="password" id="pwd-input" placeholder="••••••••" />
+          <button type="button" id="toggle-pwd"><i class="fas fa-eye"></i></button>
+        </div>
+      </div>
+      <button class="btn-login" id="login-btn">Entrer <i class="fas fa-arrow-right"></i></button>
+      <p class="login-error" id="login-error"></p>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="admin-panel" class="hidden">
+    <nav class="admin-nav">
+      <div class="nav-logo">OBI<span>41</span> <span class="admin-badge">ADMIN</span></div>
+      <div class="nav-actions">
+        <a href="booking.html" target="_blank" class="btn-preview"><i class="fas fa-eye"></i> Voir le calendrier public</a>
+        <button class="btn-logout" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
+      </div>
+    </nav>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <p class="section-label">DISPONIBILITÉS</p>
+          <h1>Gérer mon <span>calendrier</span></h1>
+          <p class="sub">Cliquez sur un jour pour le marquer disponible ou indisponible. Gérez aussi les créneaux par journée.</p>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><span class="dot available"></span> Disponible</div>
+          <div class="legend-item"><span class="dot unavailable"></span> Indisponible</div>
+          <div class="legend-item"><span class="dot partial"></span> Partiel</div>
+        </div>
+      </div>
+
+      <div class="admin-layout">
+
+        <!-- CALENDRIER ADMIN -->
+        <div class="calendar-wrap">
+          <div class="calendar-nav">
+            <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+            <h2 id="month-label"></h2>
+            <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="calendar-days-header">
+            <span>Dim</span><span>Lun</span><span>Mar</span><span>Mer</span>
+            <span>Jeu</span><span>Ven</span><span>Sam</span>
+          </div>
+          <div class="calendar-grid" id="calendar-grid"></div>
+        </div>
+
+        <!-- PANNEAU CRÉNEAUX -->
+        <div class="slots-panel" id="slots-panel">
+          <div class="slots-panel-empty" id="slots-empty">
+            <i class="fas fa-calendar-day"></i>
+            <p>Sélectionnez un jour pour gérer ses créneaux</p>
+          </div>
+          <div class="slots-panel-content hidden" id="slots-content">
+            <div class="slots-panel-header">
+              <h3 id="slots-date-label"></h3>
+              <div class="slots-actions">
+                <button class="btn-all-open" id="btn-all-open">Tout ouvrir</button>
+                <button class="btn-all-close" id="btn-all-close">Tout fermer</button>
+              </div>
+            </div>
+            <div class="slots-list" id="slots-list"></div>
+            <button class="btn-save" id="btn-save"><i class="fas fa-check"></i> Sauvegarder</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/supabase-config.js?v=2"></script>
+  <script src="../assets/js/admin-config.js?v=2"></script>
+  <script src="../assets/js/admin-auth.js?v=2"></script>
+  <script src="../assets/js/admin-calendar.js?v=2"></script>
+  <script src="../assets/js/admin-slots.js?v=2"></script>
+  <script src="../assets/js/admin-init.js?v=2"></script>
+</body>
+</html>

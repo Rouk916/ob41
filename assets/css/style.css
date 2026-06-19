@@ -1,0 +1,14 @@
+/* OBI41 — feuille de style principale (imports des composants) */
+@import 'base.css?v=3';
+@import 'nav.css?v=3';
+@import 'hero.css?v=3';
+@import 'hero-title.css?v=3';
+@import 'buttons.css?v=3';
+@import 'stats.css?v=3';
+@import 'about.css?v=6';
+@import 'slideshow.css?v=9';
+@import 'services.css?v=3';
+@import 'form.css?v=3';
+@import 'footer.css?v=3';
+@import 'animations.css?v=3';
+@import 'responsive.css?v=3';

@@ -1,0 +1,48 @@
+/* ─── KEYFRAMES ─── */
+@keyframes drift1 {
+  0%   { background-position: 60% 40%, 20% 75%; opacity: 1; }
+  25%  { background: radial-gradient(ellipse 80% 60% at 25% 55%, rgba(247,181,0,0.2) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 80% 25%, rgba(200,140,0,0.13) 0%, transparent 60%); }
+  50%  { background: radial-gradient(ellipse 80% 60% at 70% 65%, rgba(220,160,0,0.22) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 15% 45%, rgba(255,210,60,0.1) 0%, transparent 60%); }
+  75%  { background: radial-gradient(ellipse 80% 60% at 40% 30%, rgba(247,181,0,0.18) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 75% 70%, rgba(200,150,0,0.14) 0%, transparent 60%); }
+  100% { background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(247,181,0,0.2) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 75%, rgba(200,140,0,0.13) 0%, transparent 60%); }
+}
+
+@keyframes letterReveal {
+  to { opacity: 1; transform: translateY(0) rotateX(0deg); }
+}
+
+@keyframes logoReveal {
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes lineReveal {
+  to { width: 100%; }
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollLine {
+  0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  50% { opacity: 1; transform: scaleY(1); }
+  100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ─── SCROLL REVEAL ─── */
+.scroll-hidden {
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-hidden.reveal-up    { opacity: 0; transform: translateY(50px); }
+.scroll-hidden.reveal-left  { opacity: 0; transform: translateX(-50px); }
+.scroll-hidden.reveal-right { opacity: 0; transform: translateX(50px); }
+.scroll-hidden.reveal-fade  { opacity: 0; transform: none; }
+
+.scroll-visible { opacity: 1 !important; transform: none !important; }

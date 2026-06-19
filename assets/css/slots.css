@@ -1,0 +1,54 @@
+.slots-wrap {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: none;
+}
+.slots-wrap.visible { display: block; }
+
+.slots-title {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.slots-title span { color: var(--accent); }
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.slot-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem 0.3rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+.slot-btn:hover { background: var(--bg); border-color: var(--accent); transform: translateY(-2px); }
+.slot-btn.selected { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.slot-btn.booked { background: #111; color: #333; border-color: #1a1a1a; cursor: not-allowed; text-decoration: line-through; }
+
+.slots-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+  padding: 1.5rem 1rem;
+  background: rgba(239,68,68,0.06);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 8px;
+  color: var(--muted);
+}
+.slots-msg[hidden] { display: none; }
+.slots-msg i { font-size: 1.8rem; color: #ef4444; }
+.slots-msg p { font-size: 0.85rem; line-height: 1.6; }

@@ -1,0 +1,8 @@
+/* Espace DJ (admin) — imports des composants */
+@import 'admin-base.css?v=3';
+@import 'admin-login.css?v=3';
+@import 'admin-nav.css?v=3';
+@import 'admin-layout.css?v=3';
+@import 'admin-calendar.css?v=3';
+@import 'admin-slots.css?v=3';
+@import 'admin-toggle.css?v=3';

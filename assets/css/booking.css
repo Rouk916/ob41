@@ -1,0 +1,7 @@
+/* Page réservation — imports des composants */
+@import 'booking-base.css?v=3';
+@import 'booking-header.css?v=3';
+@import 'calendar.css?v=3';
+@import 'calendar-day.css?v=3';
+@import 'slots.css?v=3';
+@import 'booking-form.css?v=3';

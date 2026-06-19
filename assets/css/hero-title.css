@@ -1,0 +1,55 @@
+.hero-logo {
+  display: block;
+  width: min(88%, 640px);
+  height: auto;
+  margin: 0.6rem auto 0;
+  opacity: 0;
+  transform: scale(0.92) translateY(20px);
+  animation: logoReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+  filter: drop-shadow(0 8px 40px rgba(247, 181, 0, 0.18));
+}
+
+.hero-content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(6rem, 18vw, 16rem);
+  line-height: 0.9;
+  letter-spacing: 4px;
+  color: var(--text);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-content h1 .headphone-icon {
+  color: var(--accent);
+  font-size: 0.55em;
+  vertical-align: middle;
+  margin-left: 0.08em;
+  opacity: 0;
+  transform: translateY(80px) rotateX(90deg);
+  animation: letterReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  text-shadow: 0 0 30px rgba(247,181,0,0.35);
+}
+
+.hero-content h1 .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(80px) rotateX(90deg);
+  animation: letterReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-content h1 .letter.accent {
+  color: var(--accent);
+  text-shadow: 0 0 30px rgba(247,181,0,0.35);
+  animation: letterReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-content h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: lineReveal 0.8s ease forwards 1.4s;
+}

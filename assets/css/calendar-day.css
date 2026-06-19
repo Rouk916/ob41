@@ -1,0 +1,52 @@
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+  position: relative;
+  border: 1px solid transparent;
+  font-weight: 400;
+}
+
+.cal-day:not(.empty):not(.past):hover {
+  background: var(--bg3);
+  border-color: var(--border);
+  transform: scale(1.08);
+}
+
+.cal-day.empty { cursor: default; }
+
+.cal-day.past {
+  color: #333;
+  cursor: not-allowed;
+}
+
+.cal-day.today {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.cal-day.available::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px; height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.cal-day.selected {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+  font-weight: 600;
+  transform: scale(1.1);
+}
+
+.cal-day.selected::after { display: none; }

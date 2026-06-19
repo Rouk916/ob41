@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réserver OBI41</title>
+  <meta name="description" content="Réservez OBI41 pour votre événement : choisissez une date et un créneau disponibles." />
+  <meta name="theme-color" content="#f7b500" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/booking.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">OBI<span>41</span></a>
+    <a href="../index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Retour</a>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <p class="section-label">RÉSERVATION</p>
+      <h1>Choisissez <span>votre date</span></h1>
+      <p class="sub">Sélectionnez un jour disponible, une plage horaire, puis complétez votre demande.</p>
+    </div>
+
+    <div class="booking-layout">
+
+      <!-- CALENDRIER -->
+      <div class="calendar-wrap">
+        <div class="calendar-nav">
+          <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+          <h2 id="month-label"></h2>
+          <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar-days-header">
+          <span>Dim</span><span>Lun</span><span>Mar</span><span>Mer</span>
+          <span>Jeu</span><span>Ven</span><span>Sam</span>
+        </div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+
+        <!-- CRÉNEAUX -->
+        <div class="slots-wrap" id="slots-wrap">
+          <p class="slots-title">Plages disponibles — <span id="selected-date-label"></span></p>
+          <div class="slots-grid" id="slots-grid"></div>
+          <div class="slots-msg" id="slots-msg" hidden>
+            <i class="fas fa-calendar-xmark"></i>
+            <p>Aucune plage disponible ce jour-là.<br />Choisissez une autre date dans le calendrier.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <div class="form-wrap">
+        <div class="selected-summary" id="summary">
+          <i class="fas fa-calendar-check"></i>
+          <p>Aucune date sélectionnée</p>
+        </div>
+
+        <form id="booking-form">
+          <input type="hidden" name="date_reservee" id="hidden-date" />
+          <input type="hidden" name="heure_reservee" id="hidden-slot" />
+
+          <div class="form-group">
+            <label>Nom complet *</label>
+            <input type="text" name="nom" placeholder="Jean Tremblay" required />
+          </div>
+          <div class="form-group">
+            <label>Courriel *</label>
+            <input type="email" name="email" placeholder="jean@exemple.com" required />
+          </div>
+          <div class="form-group">
+            <label>Téléphone</label>
+            <input type="tel" name="telephone" placeholder="(514) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label>Type d'événement *</label>
+            <select name="type" required>
+              <option value="">Choisir...</option>
+              <option>Club / Bar</option>
+              <option>Mariage</option>
+              <option>Événement corporatif</option>
+              <option>Fête privée</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Durée estimée</label>
+            <select name="duree">
+              <option>2 heures</option>
+              <option>3 heures</option>
+              <option>4 heures</option>
+              <option>5 heures +</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Lieu / Adresse</label>
+            <input type="text" name="lieu" placeholder="Nom de la salle ou adresse" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="3" placeholder="Décrivez votre événement, vos attentes musicales..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submit-btn" disabled>
+            <span>Sélectionnez une date d'abord</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/supabase-config.js?v=2"></script>
+  <script src="../assets/js/booking-config.js?v=2"></script>
+  <script src="../assets/js/booking-calendar.js?v=2"></script>
+  <script src="../assets/js/booking-slots.js?v=2"></script>
+  <script src="../assets/js/booking-init.js?v=2"></script>
+</body>
+</html>
